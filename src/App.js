@@ -1,10 +1,11 @@
 import './App.css'
-import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom'
 
 // page components
 import Home from './pages/Home'
-import Contact from './pages/Contact'
 import About from './pages/About'
+import Contact from './pages/Contact'
+import Article from './pages/Article'
 
 function App() {
   return (
@@ -18,14 +19,17 @@ function App() {
         </nav>
 
         <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
           <Route path="/about">
             <About />
           </Route>
           <Route path="/contact">
             <Contact />
           </Route>
-          <Route path="/">
-            <Home />
+          <Route path="/articles/:id">
+            <Article />
           </Route>
         </Switch>
 
